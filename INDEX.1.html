@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MSmart - Your Smart Shopping Destination</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .deal-flash {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-white bg-opacity-80 backdrop-blur sticky top-0 z-50 shadow-md border-b border-gray-200">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 cursor-pointer">
+          MSmart
+        </div>
+        <div class="hidden md:flex items-center bg-gray-100 rounded-md overflow-hidden">
+          <input type="text" placeholder="Search for products, brands and more..." class="px-4 py-2 w-96 focus:outline-none bg-transparent" />
+          <button class="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="flex items-center space-x-6 text-gray-700">
+        <div class="flex items-center space-x-2 cursor-pointer hover:text-blue-600">
+          <i class="fas fa-user"></i><span class="hidden md:inline">Login</span>
+        </div>
+        <div class="flex items-center space-x-2 cursor-pointer hover:text-blue-600">
+          <i class="fas fa-heart"></i><span class="hidden md:inline">Wishlist</span>
+        </div>
+        <div class="flex items-center space-x-2 cursor-pointer hover:text-blue-600 relative">
+          <i class="fas fa-shopping-cart"></i><span class="hidden md:inline">Cart</span>
+          <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories Nav -->
+  <nav class="bg-white bg-opacity-80 backdrop-blur shadow-sm border-b border-gray-200 sticky top-[64px] z-40">
+    <div class="container mx-auto px-6 py-3 flex space-x-4 overflow-x-auto">
+      <button class="px-4 py-2 font-semibold text-blue-700 bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-mobile-alt mr-2"></i> Electronics
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-tshirt mr-2"></i> Fashion
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-home mr-2"></i> Home & Kitchen
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-dumbbell mr-2"></i> Sports & Fitness
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-book mr-2"></i> Books
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-car mr-2"></i> Automotive
+      </button>
+      <button class="px-4 py-2 font-semibold text-gray-600 hover:text-blue-700 hover:bg-blue-100 rounded-full whitespace-nowrap">
+        <i class="fas fa-gamepad mr-2"></i> Gaming
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-20 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl font-extrabold mb-4 leading-tight">
+          Smart Shopping,<br />
+          <span class="bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent">Great Deals</span>
+        </h1>
+        <p class="text-lg mb-8 opacity-90 max-w-xl">
+          Discover amazing products from top brands with exclusive deals and special offers curated just for you.
+        </p>
+        <button class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 shadow-lg transition transform hover:scale-105">
+          🛍 Shop Now
+        </button>
+      </div>
+      <div class="flex justify-center">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Shopping illustration" class="rounded-lg shadow-lg"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flash Deals -->
+  <section class="py-12 bg-pink-100 bg-opacity-40">
+    <div class="container mx-auto px-6">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-bold text-red-600 flex items-center space-x-3">
+          <i class="fas fa-bolt"></i><span>Flash Deals</span>
+        </h2>
+        <div class="deal-flash bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold select-none">
+          New Picks for You!
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
+        <!-- Trimmer -->
+        <a href="https://fktr.in/99JJ6mu" target="_blank" class="card-hover rounded-lg p-4 flex flex-col items-center text-center border cursor-pointer">
+          <img src="https://images.shopclues.com/images1/thumbnails/117524/320/320/153490054-117524244-1707397264.jpg" alt="Trimmer" class="w-20 h-20 object-contain mb-3"/>
+          <h3 class="font-semibold mb-1">Trimmer</h3>
+          <p class="text-red-600 font-bold mb-1">From ₹177</p>
+          <p class="text-xs text-gray-600">Grooming Essentials</p>
+        </a>
+        <!-- Belts -->
+        <a href="https://fktr.in/nkEgUS2" target="_blank" class="card-hover rounded-lg p-4 flex flex-col items-center text-center border cursor-pointer">
+          <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRMUB_ZuS754CVZ25kjSXFO6csUjCjMuygBFcrwYVstQVo1t-4uQmKD2UXVaovWO5uG7JrEo8cs0nCheXdXMNcFeA6OT1l8ejXEVBy8jNc" alt="Belt" class="w-20 h-20 object-contain mb-3"/>
+          <h3 class="font-semibold mb-1">Belt</h3>
+          <p class="text-red-600 font-bold mb-1">From ₹99</p>
+          <p class="text-xs text-gray-600">Men's Accessories</p>
+        </a>
+        <!-- Watch -->
+        <a href="https://temptindia.com/products/streak-x-smartwatch" target="_blank" class="card-hover rounded-lg p-4 flex flex-col items-center text-center border cursor-pointer">
+          <img src="http://temptindia.com/cdn/shop/files/Artboard1_3adff1c4-550f-4c4d-ab5d-674c74b8e68a.png?v=1727173896" alt="Smart Watch" class="w-20 h-20 object-contain mb-3"/>
+          <h3 class="font-semibold mb-1">Smart Watch</h3>
+          <p class="text-red-600 font-bold mb-1">Check Price</p>
+          <p class="text-xs text-gray-600">Modern Tech</p>
+        </a>
+        <!-- Sunglasses -->
+        <a href="https://www.lenskart.com/vincent-chase-vc-s14507-m-c2-sunglasses.html" target="_blank" class="card-hover rounded-lg p-4 flex flex-col items-center text-center border cursor-pointer">
+          <img src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//v/i/grey-gradient-gunmetal-full-rim-rectangle--square-vincent-chase-livewire-vc-s14507-m-c2-sunglasses__dsc0249_30_04_2024.jpg" alt="Sunglasses" class="w-20 h-20 object-contain mb-3"/>
+          <h3 class="font-semibold mb-1">Sunglasses</h3>
+          <p class="text-red-600 font-bold mb-1">From ₹215</p>
+          <p class="text-xs text-gray-600">Stylish Eyewear</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="bg-white bg-opacity-90 backdrop-blur py-12 mt-16 border-t border-gray-300">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-4xl font-bold mb-6 text-blue-700">About Us</h2>
+      <p class="text-gray-700 text-lg leading-relaxed">
+        At <span class="font-semibold text-blue-600">MSmart</span>, we are passionate about bringing you the best deals from trusted brands across a wide range of categories. Our goal is to make your shopping experience seamless, enjoyable, and rewarding. We curate the latest products and hottest deals so you can find everything you need in one place.
+      </p>
+    </div>
+  </section>
+
+  <!-- Affiliate Note -->
+  <footer class="bg-gray-100 py-8 border-t border-gray-300 mt-12">
+    <div class="container mx-auto px-6 max-w-3xl text-center text-gray-700 text-sm">
+      <p>
+        <strong>Note:</strong> This is an <span class="font-semibold">Affiliate Marketing</span> site. We do not handle shipping, delivery, or product returns. All orders are fulfilled by the respective sellers or brands.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
